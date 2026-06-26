@@ -36,5 +36,5 @@ graph = builder.compile()
 if __name__ == "__main__":
     result = graph.invoke({"campaigns": [], "anomalies": [], "report": ""})
 
-    print("\n=== KAMPANYA ANALİZ RAPORU (LangGraph) ===\n")
+    print("\n  -KAMPANYA ANALİZ RAPORU (LangGraph)-\n")
     print(result["report"])
