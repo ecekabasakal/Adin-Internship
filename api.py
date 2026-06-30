@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from pipeline import graph
+from chat import soruya_cevap_ver
+from pydantic import BaseModel
 
 app = FastAPI(title="Reklam Anomali Analiz API")
 
@@ -21,5 +23,19 @@ def analyze():
             "anomalies": result["anomalies"],
             "report": result["report"]
         },
+        media_type="application/json; charset=utf-8"
+    )
+   
+
+
+class SoruModeli(BaseModel):
+    soru: str
+
+
+@app.post("/ask")
+def ask(istek: SoruModeli):
+    cevap = soruya_cevap_ver(istek.soru)
+    return JSONResponse(
+        content={"cevap": cevap},
         media_type="application/json; charset=utf-8"
     )
