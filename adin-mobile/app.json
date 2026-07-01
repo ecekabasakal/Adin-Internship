@@ -4,7 +4,7 @@
     "slug": "adin-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/analogo.png",
     "scheme": "adinmobile",
     "userInterfaceStyle": "automatic",
     "ios": {
